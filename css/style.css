@@ -1,0 +1,229 @@
+/* ==========================================================
+   ARTSPACE. — Personal Art Portfolio
+   CSS kustom: hanya untuk identitas visual. Layout utama
+   tetap memakai grid, navbar, card, form & modal Bootstrap.
+   ========================================================== */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --paper: #f6f3ee;       /* off-white */
+  --paper-2: #ece8e1;     /* off-white lebih gelap */
+  --ink: #25252d;         /* charcoal */
+  --ink-soft: #5d5d69;
+  --lavender: #b9afd1;    /* dusty lavender */
+  --lavender-soft: #e4dff0;
+  --blue: #6f86a8;        /* muted blue */
+  --line: rgba(37, 37, 45, 0.14);
+  --radius: 18px;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --nav-h: 72px;
+}
+
+/* ---------- 2. Base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h); /* anchor tidak tertutup navbar sticky */
+}
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+section { overflow-x: clip; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; }
+img { max-width: 100%; }
+a { color: inherit; }
+::selection { background: var(--lavender-soft); }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* ---------- 3. Elemen teks umum ---------- */
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+.display-title {
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.display-title em { color: var(--blue); font-style: italic; }
+.section-title { font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 1rem; }
+.lead-text { font-size: 1.1rem; color: var(--ink-soft); max-width: 34rem; }
+.text-muted-ink { color: var(--ink-soft); }
+.small-heading {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.placeholder-text { background: var(--lavender-soft); padding: 0 0.3rem; border-radius: 4px; }
+
+/* ---------- 4. Navbar ---------- */
+.site-nav {
+  min-height: var(--nav-h);
+  background: rgba(246, 243, 238, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--ink);
+}
+.wordmark span { color: var(--blue); }
+.site-nav .nav-link {
+  color: var(--ink);
+  font-size: 0.92rem;
+  position: relative;
+  padding: 0.6rem 0;
+  transition: color 0.25s;
+}
+.site-nav .nav-link::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0.3rem;
+  width: 100%; height: 1px;
+  background: var(--blue);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active { color: var(--blue); }
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link.active::after { transform: scaleX(1); }
+.navbar-toggler { border-color: var(--line); }
+.navbar-toggler:focus { box-shadow: 0 0 0 2px var(--lavender); }
+
+/* ---------- 5. Tombol ---------- */
+.btn { border-radius: 999px; padding: 0.7rem 1.6rem; font-weight: 500; transition: all 0.25s ease; }
+.btn-lg { font-size: 1rem; padding: 0.85rem 1.8rem; }
+.btn-ink { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+.btn-ink:hover, .btn-ink:focus { background: var(--blue); border-color: var(--blue); color: #fff; transform: translateY(-2px); }
+.btn-outline-ink { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-outline-ink:hover, .btn-outline-ink:focus { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+.link-ink { color: var(--ink); font-weight: 500; text-decoration: none; border-radius: 0; }
+.link-ink:hover { color: var(--blue); }
+.link-ink i { display: inline-block; transition: transform 0.25s; }
+.link-ink:hover i { transform: translateX(4px); }
+.send-btn { width: 100%; }
+@media (min-width: 576px) { .send-btn { width: auto; } }
+
+/* ---------- 6. Hero ---------- */
+.hero { padding-top: 3rem; }
+.hero-collage { position: relative; max-width: 520px; margin: 0 auto; padding-bottom: 2.5rem; }
+.frame {
+  margin: 0; background: #fff; padding: 10px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 18px 40px -22px rgba(37, 37, 45, 0.45);
+}
+.frame img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
+.hero-main { width: 78%; margin-left: auto; transform: rotate(1.5deg); }
+.hero-main img { aspect-ratio: 3 / 4; }
+.hero-side { position: absolute; left: 0; bottom: 0; width: 40%; transform: rotate(-3deg); }
+.hero-side img { aspect-ratio: 3 / 4; }
+.hero-tag {
+  position: absolute; top: 1.2rem; left: 0;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  background: var(--lavender-soft); padding: 0.35rem 0.8rem; border-radius: 999px;
+}
+@media (min-width: 992px) { .hero { padding-top: 4rem; } .hero-collage { max-width: 560px; } }
+
+/* ---------- 7. About ---------- */
+.about { background: var(--paper-2); }
+.about-portrait {
+  background: #fff; border-radius: 999px 999px var(--radius) var(--radius);
+  padding: 1.5rem 1rem 1rem; border: 1px solid var(--line);
+  max-width: 340px; margin: 0 auto;
+}
+.about-portrait img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; }
+.chips li {
+  border: 1px solid var(--ink); border-radius: 999px;
+  padding: 0.3rem 1rem; font-size: 0.9rem;
+  transition: background 0.25s, color 0.25s;
+}
+.chips li:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- 8. Gallery ---------- */
+.art-card {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: #fff; overflow: hidden; height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.art-card:hover { transform: translateY(-6px); box-shadow: 0 24px 44px -26px rgba(37, 37, 45, 0.5); }
+.art-thumb {
+  display: block; width: 100%; padding: 0; border: 0; background: #fff;
+  cursor: zoom-in; overflow: hidden;
+}
+.art-thumb img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: contain; /* contain: karya tidak terpotong */
+  padding: 0.75rem; transition: transform 0.5s ease;
+}
+.art-card:hover .art-thumb img { transform: scale(1.03); }
+.art-card .card-body { padding: 1.25rem 1.4rem 1.5rem; border-top: 1px solid var(--line); }
+.art-label {
+  display: inline-block; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 600; color: var(--blue); margin-bottom: 0.4rem;
+}
+.art-card .card-title { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.art-card .card-text { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Susunan bertingkat (editorial) hanya di desktop, 3 kolom */
+@media (min-width: 992px) {
+  .art-col:nth-child(3n + 2) { margin-top: 3rem; }
+}
+
+/* ---------- 9. Contact ---------- */
+.contact { background: var(--paper-2); }
+.contact-form {
+  background: #fff; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius);
+}
+@media (min-width: 576px) { .contact-form { padding: 2rem; } }
+.form-label { font-weight: 500; font-size: 0.9rem; }
+.form-control {
+  border-radius: 12px; border: 1px solid var(--line); background: var(--paper);
+  padding: 0.75rem 1rem; transition: border-color 0.25s, box-shadow 0.25s;
+}
+.form-control:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(111, 134, 168, 0.25); background: #fff; }
+#formAlert .alert { border-radius: 12px; }
+
+/* ---------- 10. Modal ---------- */
+.art-modal { border: 0; border-radius: var(--radius); background: var(--paper); }
+.modal-img-wrap { background: #fff; border-radius: 14px; padding: 0.75rem; border: 1px solid var(--line); }
+.modal-img-wrap img {
+  display: block; width: 100%;
+  max-height: 60vh;            /* gambar tidak keluar dari layar mobile */
+  object-fit: contain;
+}
+@media (min-width: 768px) { .modal-img-wrap img { max-height: 72vh; } }
+
+/* ---------- 11. Footer ---------- */
+.site-footer { background: var(--ink); color: var(--paper); }
+.site-footer .wordmark { color: var(--paper); }
+.footer-links a { text-decoration: none; opacity: 0.8; transition: opacity 0.25s, color 0.25s; }
+.footer-links a:hover { opacity: 1; color: var(--lavender); }
+
+/* ---------- 12. Animasi muncul (reveal) ---------- */
+/* Hanya aktif bila JS berjalan (kelas .js ditambahkan oleh script.js) */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* Rotasi hero dipertahankan walau reveal selesai */
+.js .hero-collage.reveal.is-visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}

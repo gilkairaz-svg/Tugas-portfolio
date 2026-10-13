@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARTSPACE. — Personal Art Portfolio</title>
+  <meta name="description" content="A personal digital art gallery — a little world of my imagination." />
+
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 + Bootstrap Icons (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- CSS kustom -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ A. NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg sticky-top site-nav" id="siteNav">
+    <div class="container">
+      <a class="navbar-brand wordmark" href="#home">ARTSPACE<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-3 pt-3 pt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ B. HERO ============ -->
+    <section id="home" class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center gy-5 py-lg-4">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <p class="eyebrow reveal">Digital Artist / Personal Gallery</p>
+            <h1 class="display-title reveal">Khaila Razbani <em>Portfolio.</em></h1>
+            <p class="lead-text reveal">
+              Welcome to my little corner of the internet — a gallery of characters,
+              colours and quiet stories. I love illustration, character design and
+              exploring new visual worlds, one drawing at a time.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 mt-4 reveal">
+              <a href="#gallery" class="btn btn-ink btn-lg">Explore My Art <i class="bi bi-arrow-down-short"></i></a>
+              <a href="#contact" class="btn btn-outline-ink btn-lg">Get in Touch</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="hero-collage reveal">
+              <figure class="frame hero-main">
+                <img src="assets/images/artwork-06.jpg" alt="Illustration of a golden-haired character in a yellow jacket resting their chin on one hand" />
+              </figure>
+              <figure class="frame hero-side">
+                <img src="assets/images/artwork-03.jpg" alt="Illustration of a crowned character holding glowing blue dice" />
+              </figure>
+              <span class="hero-tag">Selected works — 06</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ C. ABOUT ============ -->
+    <section id="about" class="py-5 about">
+      <div class="container py-lg-4">
+        <div class="row align-items-center g-5">
+          <div class="col-md-5 col-lg-4">
+            <div class="about-portrait reveal">
+              <img src="assets/images/artwork-01.jpg" alt="Chibi illustration of a white-blue wolf character in a navy outfit" />
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-7 offset-lg-1">
+            <p class="eyebrow reveal">About</p>
+            <h2 class="section-title reveal">A Little About Me</h2>
+            <!-- Draft teks: silakan ganti dengan perkenalan Anda -->
+            <p class="reveal">
+              Hi, I'm <strong class="placeholder-text">Khaila Razbani</strong> — a digital art enthusiast
+              who enjoys drawing characters and imagining the worlds they live in.
+              This space is where I gather my illustrations and keep experimenting with colour,
+              mood and style.
+            </p>
+            <p class="reveal">
+              <span class="placeholder-text">I am also an active student majoring in Information Systems and Technology Education at the UPI Purwakarta campus.</span>
+            </p>
+            <h3 class="small-heading reveal">Artistic Interests</h3>
+            <ul class="list-unstyled d-flex flex-wrap gap-2 chips reveal">
+              <li>Character Illustration</li>
+              <li>Character Design</li>
+              <li>Visual Storytelling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ D. GALLERY ============ -->
+    <section id="gallery" class="py-5 gallery">
+      <div class="container py-lg-4">
+        <div class="row mb-5">
+          <div class="col-lg-7">
+            <p class="eyebrow reveal">Gallery</p>
+            <h2 class="section-title reveal">Pieces of My Imagination</h2>
+            <p class="reveal text-muted-ink">Six illustrations from my collection. Tap any piece to see it larger.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" id="galleryGrid">
+
+          <!-- Karya 1 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="Nexora Rafilish" data-label="Maskot Nexora"
+                      data-desc="Maskot Nexora."
+                      data-img="assets/images/artwork-01.jpg"
+                      aria-label="View artwork: Nexora Rafilish">
+                <img src="assets/images/artwork-01.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of Nexora Rafilish, the mascot for Nexora" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Maskot Nexora</span>
+                <h3 class="card-title">Nexora Rafilish</h3>
+                <p class="card-text">Maskot Nexora.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="Little Frost" data-label="Chibi Character"
+                        data-desc="Maskot Nexora."
+                        data-img="assets/images/artwork-01.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karya 2 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="Light Within the Green" data-label="Digital Painting"
+                      data-desc="A figure resting among leaves and wildflowers, with a glowing blue light spreading across the chest."
+                      data-img="assets/images/artwork-02.jpg"
+                      aria-label="View artwork: Light Within the Green">
+                <img src="assets/images/artwork-02.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of a figure lying in a garden of green leaves and flowers with a glowing blue light across the chest" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Digital Painting</span>
+                <h3 class="card-title">Light Within the Green</h3>
+                <p class="card-text">A figure resting among leaves and wildflowers, glowing softly in blue.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="Light Within the Green" data-label="Digital Painting"
+                        data-desc="A figure resting among leaves and wildflowers, with a glowing blue light spreading across the chest."
+                        data-img="assets/images/artwork-02.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karya 3 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="Dice of Starlight" data-label="Fantasy Art"
+                      data-desc="A crowned character in a dark patterned robe, holding a handful of softly glowing blue dice."
+                      data-img="assets/images/artwork-03.jpg"
+                      aria-label="View artwork: Dice of Starlight">
+                <img src="assets/images/artwork-03.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of a crowned character holding glowing blue dice" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Fantasy Art</span>
+                <h3 class="card-title">Dice of Starlight</h3>
+                <p class="card-text">A crowned character in a dark patterned robe, holding glowing blue dice.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="Dice of Starlight" data-label="Fantasy Art"
+                        data-desc="A crowned character in a dark patterned robe, holding a handful of softly glowing blue dice."
+                        data-img="assets/images/artwork-03.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karya 4 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="The Quiet Crown" data-label="Character Illustration"
+                      data-desc="A long-haired character in a light robe with a patterned sash and a silver crown, hand resting over the chest."
+                      data-img="assets/images/artwork-04.jpg"
+                      aria-label="View artwork: The Quiet Crown">
+                <img src="assets/images/artwork-04.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of a long-haired character in a white robe with a silver crown and patterned sash" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Character Illustration</span>
+                <h3 class="card-title">The Quiet Crown</h3>
+                <p class="card-text">A long-haired character in a light robe with a patterned sash and silver crown.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="The Quiet Crown" data-label="Character Illustration"
+                        data-desc="A long-haired character in a light robe with a patterned sash and a silver crown, hand resting over the chest."
+                        data-img="assets/images/artwork-04.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karya 5 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="The Still Gaze" data-label="Character Illustration"
+                      data-desc="A calm, serious character in a dark jacket with a patterned headband, drawn in muted charcoal tones."
+                      data-img="assets/images/artwork-05.jpg"
+                      aria-label="View artwork: The Still Gaze">
+                <img src="assets/images/artwork-05.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of a character in a dark jacket wearing a patterned headband" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Character Illustration</span>
+                <h3 class="card-title">The Still Gaze</h3>
+                <p class="card-text">A calm character in a dark jacket and patterned headband, in muted charcoal tones.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="The Still Gaze" data-label="Character Illustration"
+                        data-desc="A calm, serious character in a dark jacket with a patterned headband, drawn in muted charcoal tones."
+                        data-img="assets/images/artwork-05.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karya 6 -->
+          <div class="col-12 col-sm-6 col-lg-4 art-col">
+            <article class="card art-card reveal">
+              <button type="button" class="art-thumb" data-bs-toggle="modal" data-bs-target="#artModal"
+                      data-title="Golden Hour" data-label="Portrait Study"
+                      data-desc="A golden-haired character in a bright yellow jacket, resting their chin on one hand with a small red charm swinging beside them."
+                      data-img="assets/images/artwork-06.jpg"
+                      aria-label="View artwork: Golden Hour">
+                <img src="assets/images/artwork-06.jpg" class="card-img-top" loading="lazy"
+                     alt="Illustration of a golden-haired character in a yellow jacket resting their chin on one hand" />
+              </button>
+              <div class="card-body">
+                <span class="art-label">Portrait Study</span>
+                <h3 class="card-title">Golden Hour</h3>
+                <p class="card-text">A golden-haired character in a bright yellow jacket, chin resting on one hand.</p>
+                <button type="button" class="btn btn-link link-ink p-0" data-bs-toggle="modal" data-bs-target="#artModal"
+                        data-title="Golden Hour" data-label="Portrait Study"
+                        data-desc="A golden-haired character in a bright yellow jacket, resting their chin on one hand with a small red charm swinging beside them."
+                        data-img="assets/images/artwork-06.jpg">View Artwork <i class="bi bi-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ F. CONTACT ============ -->
+    <section id="contact" class="py-5 contact">
+      <div class="container py-lg-4">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <p class="eyebrow reveal">Contact</p>
+            <h2 class="section-title reveal">Let's Say Hello</h2>
+            <p class="reveal text-muted-ink">
+              Want to talk about art, a collaboration, or just say hi? Leave a note using the form.
+            </p>
+            <p class="small text-muted-ink reveal" lang="id">
+              <i class="bi bi-info-circle"></i> Catatan: formulir ini hanya simulasi untuk tugas praktikum (tanpa backend), sehingga pesan tidak benar-benar terkirim.
+            </p>
+          </div>
+
+          <div class="col-lg-6 offset-lg-1">
+            <!-- Alert sukses ditampilkan di sini oleh JavaScript -->
+            <div id="formAlert" aria-live="polite"></div>
+
+            <form id="contactForm" class="contact-form reveal" novalidate>
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name" />
+                <div class="invalid-feedback" lang="id">Nama lengkap tidak boleh kosong.</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autocomplete="email" />
+                <div class="invalid-feedback" lang="id">Masukkan email dengan format yang valid, contoh: nama@email.com.</div>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+                <div class="invalid-feedback" lang="id">Pesan tidak boleh kosong.</div>
+              </div>
+              <button type="submit" class="btn btn-ink btn-lg send-btn" id="sendBtn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ G. FOOTER ============ -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row align-items-center gy-3 text-center text-md-start">
+        <div class="col-md-4">
+          <a href="#home" class="wordmark">ARTSPACE<span>.</span></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">Made with creativity and imagination.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <ul class="list-inline mb-2 footer-links">
+            <li class="list-inline-item"><a href="#about">About</a></li>
+            <li class="list-inline-item"><a href="#gallery">Gallery</a></li>
+            <li class="list-inline-item"><a href="#contact">Contact</a></li>
+          </ul>
+          <p class="mb-0 small">&copy; <span id="year">2026</span> ARTSPACE. All artworks belong to the artist.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ E. MODAL DETAIL KARYA ============ -->
+  <div class="modal fade" id="artModal" tabindex="-1" aria-labelledby="artModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content art-modal">
+        <div class="modal-header border-0 pb-0">
+          <span class="art-label mb-0" id="artModalLabel">Artwork</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-7">
+              <div class="modal-img-wrap">
+                <img src="" alt="" id="artModalImg" />
+              </div>
+            </div>
+            <div class="col-md-5">
+              <h3 class="modal-title section-title fs-1" id="artModalTitle">Title</h3>
+              <p id="artModalDesc" class="mb-4">Description</p>
+              <button type="button" class="btn btn-outline-ink" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL KONFIRMASI KIRIM PESAN ============ -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalTitle" aria-hidden="true" lang="id">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content art-modal">
+        <div class="modal-header border-0">
+          <h2 class="modal-title fs-4 section-title" id="confirmModalTitle">Konfirmasi Pengiriman</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <p class="mb-0">Apakah Anda yakin ingin mengirim pesan ini?</p>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-outline-ink" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-ink" id="confirmSendBtn">Ya, Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (termasuk Popper) lalu script kustom -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
